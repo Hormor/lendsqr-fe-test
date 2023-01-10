@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.scss'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from './components/Login';
+import Login from './components/login/Login';
 import DashboardNavbar from './components/dashboard/DashboardNavbar';
 
 const router = createBrowserRouter([
