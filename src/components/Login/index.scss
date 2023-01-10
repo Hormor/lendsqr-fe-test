@@ -1,0 +1,102 @@
+@import "../../index.scss";
+
+.login-page {
+  font-family: $font-avenir;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .login-imgs {
+    padding: 106px 69px 106px 67px;
+    img {
+      display: block;
+
+      &:first-child {
+        margin-bottom: 139px;
+      }
+    }
+  }
+
+  .login-container {
+    box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
+    padding-left: 100px;
+    padding-right: 157px;
+
+    h1 {
+      margin-top: 220px;
+      color: $primary-color;
+      font-weight: bold;
+      font-size: 40px;
+    }
+
+    p {
+      color: $tertiary-color;
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    .login-form {
+      margin-top: 60px;
+
+      input {
+        color: $tertiary-color;
+        padding: 16px;
+        border: 2px solid rgba(84, 95, 125, 0.15);
+        border-radius: 5px;
+        width: 100%;
+        font-size: 14px;
+        font-family: $font-avenir;
+
+        &::placeholder {
+          color: $tertiary-color;
+          opacity: 0.7;
+        }
+
+        &:focus {
+          outline: 1px solid $tertiary-color;
+          border: 1px solid $tertiary-color;
+        }
+      }
+
+      .password-input {
+        position: relative;
+        margin-top: 24px;
+
+        > span {
+          position: absolute;
+          right: 17px;
+          top: 50%;
+          color: $secondary-color;
+          font-size: 12px;
+          transform: translateY(-50%);
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 12px;
+        }
+      }
+
+      .forgot-password {
+        color: $secondary-color;
+        margin-top: 24px;
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        line-height: 16px;
+        cursor: pointer;
+      }
+
+      button {
+        width: 100%;
+        background-color: $secondary-color;
+        margin-top: 30px;
+        font-weight: 600;
+        font-size: 14px;
+        padding-top: 15px;
+        padding-bottom: 13px;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+      }
+    }
+  }
+}
