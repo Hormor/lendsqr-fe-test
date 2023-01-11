@@ -1,0 +1,43 @@
+@import "../../index.scss";
+
+.dashboard {
+  padding: 60px 60px 266px 60px;
+  width: 100%;
+  background-color: #e5e5e5;
+  color: $primary-color;
+
+  &-header {
+    font-weight: 500;
+    font-size: 24px;
+    opacity: 0.3;
+  }
+
+  &-content {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  &-card {
+    background-color: #ffffff;
+    padding: 20px 0 20px 30px;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+
+    p {
+      margin-top: 14px;
+      font-weight: 500;
+      font-size: 14px;
+      color: $tertiary-color;
+    }
+
+    span {
+      display: inline-block;
+      margin-top: 12px;
+      font-weight: 600;
+      font-size: 24px;
+    }
+  }
+}
