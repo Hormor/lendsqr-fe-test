@@ -5,6 +5,9 @@ import UsersIcon from "../../assets/dashboard-icons/icon-a.svg"
 import ActiveUsersIcon from "../../assets/dashboard-icons/icon-b.svg"
 import UserswithLoansIcon from "../../assets/dashboard-icons/icon-c.svg"
 import UserswithSavingsIcon from "../../assets/dashboard-icons/icon-d.svg"
+import FilterIcon from "../../assets/table-icons/filter.svg"
+import VectorIcon from "../../assets/table-icons/vector.svg"
+
 
 export default function Dashboard() {
     return (
@@ -31,6 +34,27 @@ export default function Dashboard() {
                     <p>USERS WITH SAVINGs</p>
                     <span>102,453</span>
                 </div>
+            </div>
+            <div className='dashboard-table'>
+                <table>
+                    <tr>
+                        <th>ORGANIZATION</th>
+                        <th>USERNAME</th>
+                        <th>EMAIL</th>
+                        <th>PHONE NUMBER</th>
+                        <th>DATE JOINED</th>
+                        <th>STATUS</th>
+                    </tr>
+                    <tr>
+                        <td>Lendsqr</td>
+                        <td>Adedeji</td>
+                        <td>adedeji@lendsqr.com</td>
+                        <td>08078903721</td>
+                        <td>May 15, 2020 10:00 AM</td>
+                        <td><span>Inactive</span></td>
+                        <td><img src={VectorIcon} alt="Vector Icons" /></td>
+                    </tr>
+                </table>
             </div>
         </div>
     )

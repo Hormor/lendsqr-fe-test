@@ -40,4 +40,35 @@
       font-size: 24px;
     }
   }
+
+  &-table {
+    margin-top: 40px;
+    background: #ffffff;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 30px 30px 32px 30px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+
+      th {
+        height: 61px;
+      }
+
+      td {
+        height: 61px;
+        border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+      }
+
+      span {
+        padding: 7px 13px;
+        color: $tertiary-color;
+        background-color: rgb(84, 95, 125, 0.06);
+        border-radius: 100px;
+      }
+    }
+  }
 }
