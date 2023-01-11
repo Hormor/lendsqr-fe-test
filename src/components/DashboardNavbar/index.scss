@@ -1,0 +1,83 @@
+@import "../../index.scss";
+
+.navbar {
+  font-family: $font-work;
+  padding: 26px 60px 26px 30px;
+  display: flex;
+
+  .navbar-logo {
+    width: 283px;
+    .logo {
+      margin-top: 9px;
+      width: 144px;
+    }
+  }
+
+  .navbar-items {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 60px;
+
+    .search-bar {
+      display: flex;
+      margin-top: 4px;
+      input {
+        height: 40px;
+        padding: 12px 0 12px 20px;
+        width: 344px;
+        border-right: none;
+        border: 1px solid rgb(33, 64, 125, 0.2);
+        border-radius: 8px 0 0 8px;
+
+        &:focus {
+          outline: 1px solid rgb(33, 64, 125, 0.7);
+        }
+      }
+
+      button {
+        height: 40px;
+        padding: 0 20px;
+        border-left: none;
+        border: 1px solid $secondary-color;
+        border-radius: 0 8px 8px 0;
+        background-color: $secondary-color;
+      }
+    }
+
+    .navbar-content {
+      display: flex;
+
+      a {
+        margin-top: 18px;
+        margin-right: 47px;
+        color: $primary-color;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .notification {
+        margin-top: 9px;
+        margin-right: 30px;
+      }
+
+      .profile {
+        margin-right: 10px;
+      }
+
+      span {
+        margin-top: 18px;
+        margin-right: 7px;
+        font-weight: 500;
+        color: $primary-color;
+      }
+
+      .dropdown {
+        margin-top: 10px;
+      }
+    }
+  }
+}

@@ -4,17 +4,17 @@ import App from './App'
 import './index.scss'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from './components/Login';
-import DashboardNavbar from './components/dashboard/DashboardNavbar';
+import DashboardNavbar from './components/DashboardNavbar';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
   },
-  // {
-  //   path: "/dashboard",
-  //   element: <Dashboard />,
-  // },
+  {
+    path: "/dashboard",
+    element: <DashboardNavbar />,
+  },
 ]);
 
 

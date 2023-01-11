@@ -1,6 +1,8 @@
 @import "../../index.scss";
 
 .login-page {
+  margin: 0 auto;
+  max-width: 1440px;
   font-family: $font-avenir;
   display: grid;
   grid-template-columns: 1fr 1fr;
