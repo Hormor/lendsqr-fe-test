@@ -1,0 +1,23 @@
+@import "../../index.scss";
+
+.sidebar-link {
+  display: flex;
+  height: 40px;
+  padding: 0 47px 0 30px;
+  align-items: center;
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  p {
+    margin-left: 10px;
+    margin-right: 9px;
+    opacity: 0.6;
+  }
+
+  &:hover {
+    background-color: rgb(57, 205, 204, 0.06);
+  }
+}

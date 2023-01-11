@@ -1,11 +1,13 @@
 import React from 'react'
 import './App.scss'
 import DashboardNavbar from './components/DashboardNavbar'
-import Login from './components/Login'
+import DashboardSidebar from './components/DashboardSidebar'
 
 function App() {
   return (
     <div>
+      <DashboardNavbar />
+      <DashboardSidebar />
     </div >
   )
 }

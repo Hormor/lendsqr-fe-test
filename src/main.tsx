@@ -13,7 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardNavbar />,
+    element: <App />,
   },
 ]);
 
@@ -21,6 +21,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <div className="main">
     <RouterProvider router={router} />
-    <App />
+    {/* <App /> */}
   </div>
 )
