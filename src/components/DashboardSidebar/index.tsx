@@ -29,87 +29,88 @@ import AuditLogsIcon from "../../assets/sidebar-icons/clipboard-list.svg"
 const userLinks = [
     {
         icon: UsersIcon,
-        text: "Users"
+        text: "Users",
+        to: "users"
     },
     {
         icon: GuarantorsIcon,
-        text: "Guarantors"
+        text: "Guarantors",
     },
     {
         icon: LoansIcon,
-        text: "Loans"
+        text: "Loans",
     },
     {
         icon: DecisionModelsIcon,
-        text: "Decision Models"
+        text: "Decision Models",
     },
     {
         icon: SavingsIcon,
-        text: "Savings"
+        text: "Savings",
     },
     {
         icon: LoanRequestsIcon,
-        text: "Loan Requests"
+        text: "Loan Requests",
     },
     {
         icon: WhiteListIcon,
-        text: "WhiteList"
+        text: "WhiteList",
     },
     {
         icon: KarmaIcon,
-        text: "Karma"
+        text: "Karma",
     },
 ]
 const businessLinks = [
     {
         icon: OrganisationsIcon,
-        text: "Organisations"
+        text: "Organisations",
     },
     {
         icon: LoanRequestsIcon,
-        text: "Loan Products"
+        text: "Loan Products",
     },
     {
         icon: SavingsProductsIcon,
-        text: "Savings Products"
+        text: "Savings Products",
     },
     {
         icon: FeesandChargesIcon,
-        text: "Fees and Charges"
+        text: "Fees and Charges",
     },
     {
         icon: TransactionsIcon,
-        text: "Transactions"
+        text: "Transactions",
     },
     {
         icon: ServicesIcon,
-        text: "Services"
+        text: "Services",
     },
     {
         icon: ServiceAccountIcon,
-        text: "Service Account"
+        text: "Service Account",
     },
     {
         icon: SettlementsIcon,
-        text: "Settlements"
+        text: "Settlements",
     },
     {
         icon: ReportsIcon,
-        text: "Reports"
+        text: "Reports",
     },
 ]
 const settingLinks = [
     {
         icon: PreferencesIcon,
-        text: "Preferences"
+        text: "Preferences",
     },
     {
         icon: FeesandPricingIcon,
-        text: "Fees and Pricing"
+        text: "Fees and Pricing",
     },
     {
         icon: AuditLogsIcon,
-        text: "Audit Logs"
+        text: "Audit Logs",
     },
 ]
 
@@ -122,13 +123,19 @@ export default function DashboardSidebar() {
                 <h3>Switch Organization</h3>
                 <img src={Dropdown} alt="Dropdown Icon" />
             </div>
-            <SidebarLink icon={DashboardIcon} text="Dashboard" />
+            <SidebarLink icon={DashboardIcon} text="Dashboard" to='' />
             <p className="sub-heading">CUSTOMERS</p>
-            {userLinks.map((link, i) => <SidebarLink key={i} icon={link.icon} text={link.text} />)}
+            <ul>
+                {userLinks.map((link, i) => <SidebarLink key={i} icon={link.icon} text={link.text} to={link.to} />)}
+            </ul>
             <p className="sub-heading">BUSINESSES</p>
-            {businessLinks.map((link, i) => <SidebarLink key={i} icon={link.icon} text={link.text} />)}
+            <ul>
+                {businessLinks.map((link, i) => <SidebarLink key={i} icon={link.icon} text={link.text} />)}
+            </ul>
             <p className="sub-heading">SETTINGS</p>
-            {settingLinks.map((link, i) => <SidebarLink key={i} icon={link.icon} text={link.text} />)}
+            <ul>
+                {settingLinks.map((link, i) => <SidebarLink key={i} icon={link.icon} text={link.text} />)}
+            </ul>
         </div>
     )
 }

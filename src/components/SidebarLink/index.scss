@@ -1,10 +1,15 @@
 @import "../../index.scss";
 
+li {
+  list-style-type: none;
+}
+
 .sidebar-link {
   display: flex;
   height: 40px;
   padding: 0 47px 0 30px;
   align-items: center;
+  text-decoration: none;
 
   .icon {
     width: 16px;
@@ -15,9 +20,19 @@
     margin-left: 10px;
     margin-right: 9px;
     opacity: 0.6;
+    color: $primary-color;
+  }
+
+  &.exact-active {
+    background-color: rgb(57, 205, 204, 0.06);
+    border-left: 3px solid $secondary-color;
   }
 
   &:hover {
     background-color: rgb(57, 205, 204, 0.06);
+
+    p {
+      opacity: 1;
+    }
   }
 }
