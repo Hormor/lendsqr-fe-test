@@ -52,7 +52,7 @@
         height: 61px;
         vertical-align: middle;
 
-        div {
+        > div {
           display: flex;
           align-items: center;
         }
@@ -64,13 +64,7 @@
 
       .users-table-button {
         border: none;
-
-        // div {
-        //   background: #ffffff;
-        //   border: 1px solid rgba(84, 95, 125, 0.14);
-        //   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-        //   border-radius: 4px;
-        // }
+        position: relative;
       }
 
       td {

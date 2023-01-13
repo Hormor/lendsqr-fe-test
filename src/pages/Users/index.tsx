@@ -13,6 +13,7 @@ import ViewDetails from "../../assets/hamburger-icons/view-details.svg"
 import BlacklistUser from "../../assets/hamburger-icons/blaclist-user.svg"
 import ActivateUser from "../../assets/hamburger-icons/activate-user.svg"
 import { NavLink, useNavigate } from 'react-router-dom'
+import UsersTableFilter from '../../components/UsersTableFilter'
 
 
 
@@ -88,6 +89,7 @@ export default function Users() {
                 <p>ORGANIZATION</p>
                 <button className='users-table-button'>
                   <img src={FilterIcon} alt="Filter Icon" />
+                  <UsersTableFilter />
                 </button>
               </div>
               </th>
