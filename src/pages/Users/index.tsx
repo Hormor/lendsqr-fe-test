@@ -12,7 +12,7 @@ import VectorIcon from "../../assets/table-icons/vector.svg"
 import ViewDetails from "../../assets/hamburger-icons/view-details.svg"
 import BlacklistUser from "../../assets/hamburger-icons/blaclist-user.svg"
 import ActivateUser from "../../assets/hamburger-icons/activate-user.svg"
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import UsersTableFilter from '../../components/UsersTableFilter'
 
 
@@ -87,17 +87,28 @@ export default function Users() {
             <tr>
               <th><div>
                 <p>ORGANIZATION</p>
-                <button className='users-table-button'>
-                  <img src={FilterIcon} alt="Filter Icon" />
-                  <UsersTableFilter />
-                </button>
-              </div>
-              </th>
-              <th><div>USERNAME <img src={FilterIcon} alt="Filter Icon" /></div></th>
-              <th><div>EMAIL <img src={FilterIcon} alt="Filter Icon" /></div></th>
-              <th><div>PHONE NUMBER <img src={FilterIcon} alt="Filter Icon" /></div></th>
-              <th><div>DATE JOINED <img src={FilterIcon} alt="Filter Icon" /></div></th>
-              <th><div>STATUS <img src={FilterIcon} alt="Filter Icon" /></div></th>
+                <UsersTableFilter />
+              </div></th>
+              <th><div>
+                <p>USERNAME</p>
+                <UsersTableFilter />
+              </div></th>
+              <th><div>
+                <p>EMAIL</p>
+                <UsersTableFilter />
+              </div></th>
+              <th><div>
+                <p>PHONE NUMBER</p>
+                <UsersTableFilter />
+              </div></th>
+              <th><div>
+                <p>DATE JOINED</p>
+                <UsersTableFilter />
+              </div></th>
+              <th><div>
+                <p>STATUS</p>
+                <UsersTableFilter />
+              </div></th>
             </tr>
           </thead>
           <tbody>

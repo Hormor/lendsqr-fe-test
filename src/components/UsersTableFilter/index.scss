@@ -1,65 +1,78 @@
 @import "../../index.scss";
 
-.users-table-filter {
-  background: #ffffff;
-  border: 1px solid rgba(84, 95, 125, 0.14);
-  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-  border-radius: 4px;
-  padding: 30px 20px;
-  position: absolute;
-  color: $tertiary-color;
-  width: 270px;
+.users-table-button {
+  border: none;
+  position: relative;
 
-  div {
-    margin-bottom: 20px;
+  .users-table-filter {
+    visibility: hidden;
+    background: #ffffff;
+    border: 1px solid rgba(84, 95, 125, 0.14);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 30px 20px;
+    position: absolute;
+    color: $tertiary-color;
+    width: 270px;
+    transform: translateX(-50%);
+    left: 50%;
+    z-index: 1;
 
-    label {
-      text-align: left;
-      font-weight: 500;
-      font-size: 14px;
-      display: block;
-      width: 100%;
+    div {
+      margin-bottom: 20px;
+
+      label {
+        text-align: left;
+        font-weight: 500;
+        font-size: 14px;
+        display: block;
+        width: 100%;
+      }
+
+      input,
+      select {
+        display: block;
+        width: 100%;
+        padding: 12px 20px;
+        margin-top: 6px;
+        border: 1px solid rgb(33, 63, 125, 0.2);
+        border-radius: 8px;
+
+        ::placeholder {
+          font-weight: 400;
+          font-size: 14px;
+          color: rgb(84, 95, 125, 0.7);
+        }
+      }
     }
 
-    input,
-    select {
-      display: block;
-      width: 100%;
-      padding: 12px 20px;
-      margin-top: 6px;
-      border: 1px solid rgb(33, 63, 125, 0.2);
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 14px;
+    }
+
+    button {
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 30px;
       border-radius: 8px;
 
-      ::placeholder {
-        font-weight: 400;
-        font-size: 14px;
-        color: rgb(84, 95, 125, 0.7);
+      &.reset {
+        border: 1px solid $tertiary-color;
+        color: $tertiary-color;
+        background-color: #ffffff;
+      }
+
+      &.filter {
+        background-color: $secondary-color;
+        color: #ffffff;
+        border: 1px solid $secondary-color;
       }
     }
   }
 
-  .buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0 14px;
-  }
-
-  button {
-    font-weight: 600;
-    font-size: 14px;
-    padding: 12px 30px;
-    border-radius: 8px;
-
-    &.reset {
-      border: 1px solid $tertiary-color;
-      color: $tertiary-color;
-      background-color: #ffffff;
-    }
-
-    &.filter {
-      background-color: $secondary-color;
-      color: #ffffff;
-      border: 1px solid $secondary-color;
-    }
+  &:focus .users-table-filter {
+    visibility: visible;
   }
 }
