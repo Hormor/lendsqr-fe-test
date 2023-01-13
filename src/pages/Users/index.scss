@@ -42,6 +42,7 @@
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
     padding: 30px 30px 32px 30px;
+    overflow-x: auto;
 
     table {
       width: 100%;
@@ -65,12 +66,15 @@
       td {
         height: 61px;
         border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+        white-space: nowrap;
+        padding: 0 10px;
 
         .hamburger {
           border: none;
           background-color: #ffffff;
           position: relative;
           cursor: pointer;
+          width: 20px;
 
           &-items {
             visibility: hidden;

@@ -26,116 +26,117 @@ import FeesandPricingIcon from "../../assets/sidebar-icons/badge-percent.svg"
 import AuditLogsIcon from "../../assets/sidebar-icons/clipboard-list.svg"
 
 
+
 const userLinks = [
-    {
-        icon: UsersIcon,
-        text: "Users",
-        to: "users"
-    },
-    {
-        icon: GuarantorsIcon,
-        text: "Guarantors",
-    },
-    {
-        icon: LoansIcon,
-        text: "Loans",
-    },
-    {
-        icon: DecisionModelsIcon,
-        text: "Decision Models",
-    },
-    {
-        icon: SavingsIcon,
-        text: "Savings",
-    },
-    {
-        icon: LoanRequestsIcon,
-        text: "Loan Requests",
-    },
-    {
-        icon: WhiteListIcon,
-        text: "WhiteList",
-    },
-    {
-        icon: KarmaIcon,
-        text: "Karma",
-    },
+  {
+    icon: UsersIcon,
+    text: "Users",
+    to: "users",
+  },
+  {
+    icon: GuarantorsIcon,
+    text: "Guarantors",
+  },
+  {
+    icon: LoansIcon,
+    text: "Loans",
+  },
+  {
+    icon: DecisionModelsIcon,
+    text: "Decision Models",
+  },
+  {
+    icon: SavingsIcon,
+    text: "Savings",
+  },
+  {
+    icon: LoanRequestsIcon,
+    text: "Loan Requests",
+  },
+  {
+    icon: WhiteListIcon,
+    text: "WhiteList",
+  },
+  {
+    icon: KarmaIcon,
+    text: "Karma",
+  },
 ]
 const businessLinks = [
-    {
-        icon: OrganisationsIcon,
-        text: "Organisations",
-    },
-    {
-        icon: LoanRequestsIcon,
-        text: "Loan Products",
-    },
-    {
-        icon: SavingsProductsIcon,
-        text: "Savings Products",
-    },
-    {
-        icon: FeesandChargesIcon,
-        text: "Fees and Charges",
-    },
-    {
-        icon: TransactionsIcon,
-        text: "Transactions",
-    },
-    {
-        icon: ServicesIcon,
-        text: "Services",
-    },
-    {
-        icon: ServiceAccountIcon,
-        text: "Service Account",
-    },
-    {
-        icon: SettlementsIcon,
-        text: "Settlements",
-    },
-    {
-        icon: ReportsIcon,
-        text: "Reports",
-    },
+  {
+    icon: OrganisationsIcon,
+    text: "Organisations",
+  },
+  {
+    icon: LoanRequestsIcon,
+    text: "Loan Products",
+  },
+  {
+    icon: SavingsProductsIcon,
+    text: "Savings Products",
+  },
+  {
+    icon: FeesandChargesIcon,
+    text: "Fees and Charges",
+  },
+  {
+    icon: TransactionsIcon,
+    text: "Transactions",
+  },
+  {
+    icon: ServicesIcon,
+    text: "Services",
+  },
+  {
+    icon: ServiceAccountIcon,
+    text: "Service Account",
+  },
+  {
+    icon: SettlementsIcon,
+    text: "Settlements",
+  },
+  {
+    icon: ReportsIcon,
+    text: "Reports",
+  },
 ]
 const settingLinks = [
-    {
-        icon: PreferencesIcon,
-        text: "Preferences",
-    },
-    {
-        icon: FeesandPricingIcon,
-        text: "Fees and Pricing",
-    },
-    {
-        icon: AuditLogsIcon,
-        text: "Audit Logs",
-    },
+  {
+    icon: PreferencesIcon,
+    text: "Preferences",
+  },
+  {
+    icon: FeesandPricingIcon,
+    text: "Fees and Pricing",
+  },
+  {
+    icon: AuditLogsIcon,
+    text: "Audit Logs",
+  },
 ]
 
 
-export default function DashboardSidebar() {
-    return (
-        <div className="sidebar">
-            <div className="sidebar-header">
-                <img src={Briefcase} alt="Briefcase Icon" />
-                <h3>Switch Organization</h3>
-                <img src={Dropdown} alt="Dropdown Icon" />
-            </div>
-            <SidebarLink icon={DashboardIcon} text="Dashboard" to='' />
-            <p className="sub-heading">CUSTOMERS</p>
-            <ul>
-                {userLinks.map((link, i) => <SidebarLink key={i} icon={link.icon} text={link.text} to={link.to} />)}
-            </ul>
-            <p className="sub-heading">BUSINESSES</p>
-            <ul>
-                {businessLinks.map((link, i) => <SidebarLink key={i} icon={link.icon} text={link.text} />)}
-            </ul>
-            <p className="sub-heading">SETTINGS</p>
-            <ul>
-                {settingLinks.map((link, i) => <SidebarLink key={i} icon={link.icon} text={link.text} />)}
-            </ul>
-        </div>
-    )
+export default function DashboardSidebar({ showMobile }: { showMobile?: boolean }) {
+  return (
+    <div className={showMobile ? "sidebar" : "sidebar hide-mobile"}>
+      <div className="sidebar-header">
+        <img src={Briefcase} alt="Briefcase Icon" />
+        <h3>Switch Organization</h3>
+        <img src={Dropdown} alt="Dropdown Icon" />
+      </div>
+      <SidebarLink icon={DashboardIcon} text="Dashboard" to='' />
+      <p className="sub-heading">CUSTOMERS</p>
+      <ul>
+        {userLinks.map((link, i) => <SidebarLink key={i} icon={link.icon} text={link.text} to={link.to} />)}
+      </ul>
+      <p className="sub-heading">BUSINESSES</p>
+      <ul>
+        {businessLinks.map((link, i) => <SidebarLink key={i} icon={link.icon} text={link.text} />)}
+      </ul>
+      <p className="sub-heading">SETTINGS</p>
+      <ul>
+        {settingLinks.map((link, i) => <SidebarLink key={i} icon={link.icon} text={link.text} />)}
+      </ul>
+    </div>
+  )
 }

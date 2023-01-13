@@ -77,7 +77,7 @@ export default function Users() {
         </div>
         <div className='users-card'>
           <img src={UserswithSavingsIcon} alt="Users with Savings Icon" />
-          <p>USERS WITH SAVINGs</p>
+          <p>USERS WITH SAVINGS</p>
           <span>102,453</span>
         </div>
       </div>

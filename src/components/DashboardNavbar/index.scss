@@ -5,12 +5,36 @@
   padding: 26px 60px 26px 30px;
   display: flex;
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  position: relative;
+
+  .mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
   .navbar-logo {
     width: 283px;
     .logo {
       margin-top: 9px;
       width: 144px;
+    }
+    .hamburger {
+      display: none;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: auto;
+      display: flex;
+      align-items: center;
+
+      .hamburger {
+        border: none;
+        padding: 4px;
+        display: inline;
+        flex-shrink: 0;
+        margin-right: 20px;
+      }
     }
   }
 

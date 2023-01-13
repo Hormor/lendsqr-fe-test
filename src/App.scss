@@ -20,6 +20,11 @@ body,
   width: 100%;
   background-color: #fbfbfb;
   color: $primary-color;
+  max-width: calc(100% - 283px);
+
+  @media screen and (max-width: 1024px) {
+    max-width: 100%;
+  }
 }
 
 button {

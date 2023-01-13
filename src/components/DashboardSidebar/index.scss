@@ -6,6 +6,7 @@
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
   color: $primary-color;
   padding-bottom: 20px;
+  background-color: #ffffff;
 
   &-header {
     padding: 39px 47px 52px 30px;
@@ -24,5 +25,11 @@
     font-size: 12px;
     color: $tertiary-color;
     margin: 41px 0 10px 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hide-mobile {
+    display: none;
   }
 }

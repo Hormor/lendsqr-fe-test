@@ -5,7 +5,7 @@ import FilterIcon from "../../assets/table-icons/filter.svg"
 
 export default function UsersTableFilter() {
   return (
-    <button className='users-table-button'>
+    <div className='users-table-button'>
       <img src={FilterIcon} alt="Filter Icon" />
       <div className="users-table-filter">
         <form>
@@ -43,7 +43,7 @@ export default function UsersTableFilter() {
           </div>
         </form>
       </div>
-    </button>
+    </div>
 
   )
 }
