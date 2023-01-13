@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./index.scss"
-import { instance } from '../../utils'
+import { instance, User } from '../../utils'
 import dayjs from 'dayjs'
 
 import UsersIcon from "../../assets/dashboard-icons/icon-a.svg"
@@ -15,18 +15,9 @@ import ActivateUser from "../../assets/hamburger-icons/activate-user.svg"
 import { NavLink, useNavigate } from 'react-router-dom'
 
 
-type User = {
-  id: number
-  orgName: string
-  userName: string
-  email: string
-  phoneNumber: string
-  createdAt: Date
-  status: string
-}
+
 export default function Users() {
   const [usersData, setUsersData] = useState<Array<User>>([])
-  const [buttondropdown, setButtonDropdown] = useState(false)
 
   const navigate = useNavigate()
 
@@ -93,7 +84,13 @@ export default function Users() {
         <table>
           <thead>
             <tr>
-              <th><div>ORGANIZATION <img src={FilterIcon} alt="Filter Icon" /></div></th>
+              <th><div>
+                <p>ORGANIZATION</p>
+                <button className='users-table-button'>
+                  <img src={FilterIcon} alt="Filter Icon" />
+                </button>
+              </div>
+              </th>
               <th><div>USERNAME <img src={FilterIcon} alt="Filter Icon" /></div></th>
               <th><div>EMAIL <img src={FilterIcon} alt="Filter Icon" /></div></th>
               <th><div>PHONE NUMBER <img src={FilterIcon} alt="Filter Icon" /></div></th>
