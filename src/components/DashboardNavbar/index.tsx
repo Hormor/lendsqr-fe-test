@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logo from "../../assets/logo.svg";
 import SearchIcon from "../../assets/search.svg";
 import NotificationIcon from "../../assets/notification.svg";
-import ProfileImg from "../../assets/avatar.svg";
+import ProfileImg from "../../assets/avatar.png";
 import DropdownIcon from "../../assets/dropdown.svg";
 import HamburgerIcon from "../../assets/hamburger-icon.svg"
 import "./index.scss"
