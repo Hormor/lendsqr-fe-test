@@ -16,6 +16,7 @@ body,
 }
 
 .outlet {
+  margin-top: 100px;
   padding: 60px 60px 266px 60px;
   width: 100%;
   background-color: #fbfbfb;
@@ -24,6 +25,13 @@ body,
 
   @media screen and (max-width: 1024px) {
     max-width: 100%;
+    padding: 40px 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 40px 20px;
+    background-color: rgb(207, 198, 198);
+    margin-top: 68px;
   }
 }
 

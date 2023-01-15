@@ -6,8 +6,10 @@
   &-header {
     display: flex;
 
-    p {
+    a {
       margin-left: 13px;
+      text-decoration: none;
+      color: $tertiary-color;
     }
   }
 
@@ -18,6 +20,17 @@
 
     h1 {
       margin-top: 26px;
+
+      @media screen and (max-width: 600px) {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .user-details-button {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
     }
 
     button {
@@ -25,6 +38,13 @@
       font-size: 14px;
       letter-spacing: 0.1em;
       border-radius: 8px;
+
+      @media screen and (max-width: 600px) {
+        // display: flex;
+        span {
+          display: none;
+        }
+      }
     }
 
     .blacklist-button {
@@ -38,6 +58,10 @@
       padding: 12px 22px 11px 22px;
       border: 1px solid #39cdcc;
       margin-left: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+      flex-wrap: wrap;
     }
   }
 
@@ -56,35 +80,70 @@
       .user-image {
         border-radius: 100%;
         padding: 30px;
+
+        @media screen and (max-width: 768px) {
+          padding: 10px;
+        }
       }
 
-      .user-name {
-        padding: 0 29px 0 20px;
-        border-right: 1px solid rgb(84, 95, 125, 0.2);
-        font-weight: 500;
-        font-size: 22px;
+      .user-data {
+        display: flex;
+        justify-content: space-around;
 
-        h3 {
+        @media screen and (max-width: 768px) {
+          // flex-direction: column;
+        }
+
+        .user-name {
+          padding: 0 29px 0 20px;
+          border-right: 1px solid rgb(84, 95, 125, 0.2);
           font-weight: 500;
           font-size: 22px;
+
+          h3 {
+            font-weight: 500;
+            font-size: 22px;
+          }
+
+          span {
+            font-weight: 400;
+            font-size: 14px;
+            color: $tertiary-color;
+          }
+
+          @media screen and (max-width: 768px) {
+            padding: 0 10px;
+            font-size: 18px;
+          }
+
+          // @media screen and (max-width: 768px) {
+          //   border-right: none;
+          //   border-bottom: 1px solid rgb(84, 95, 125, 0.2);
+          //   padding-bottom: 10px;
+          // }
         }
 
-        span {
-          font-weight: 400;
+        .user-tier {
+          padding: 0 30px;
+          font-weight: 500;
           font-size: 14px;
           color: $tertiary-color;
-        }
-      }
+          border-right: 1px solid rgb(84, 95, 125, 0.2);
 
-      .user-tier {
-        padding: 0 30px;
-        font-weight: 500;
-        font-size: 14px;
-        color: $tertiary-color;
-        border-right: 1px solid rgb(84, 95, 125, 0.2);
+          p {
+            margin-bottom: 10px;
+          }
 
-        p {
-          margin-bottom: 10px;
+          @media screen and (max-width: 768px) {
+            padding: 0 10px;
+            // font-size: 18px;
+          }
+
+          // @media screen and (max-width: 768px) {
+          //   border-right: none;
+          //   border-bottom: 1px solid rgb(84, 95, 125, 0.2);
+          //   padding-bottom: 10px;
+          // }
         }
       }
 
@@ -101,137 +160,209 @@
           font-weight: 400;
           font-size: 12px;
         }
-      }
-    }
 
-    .user-tabs {
-      ul {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 51px;
-        color: rgba(0, 0, 0, 0.8);
-        text-decoration: none;
-
-        li {
-          padding-bottom: 10px;
+        @media screen and (max-width: 768px) {
+          padding-left: 10px;
         }
-      }
-
-      &-active {
-        padding: 0 25px;
-        color: $secondary-color;
-        border-bottom: 2px solid $secondary-color;
       }
     }
   }
 
-  .general-details {
-    background-color: #ffffff;
-    margin-top: 30px;
-    margin-bottom: 153px;
-    padding: 30px 96px 46px 30px;
+  .user-tabs {
+    select {
+      display: none;
 
-    .personal-info {
-      border-bottom: 1px solid rgb(33, 63, 125, 0.1);
-      padding-bottom: 30px;
-
-      h3 {
+      @media screen and (max-width: 768px) {
+        display: inline;
+        width: 100%;
+        padding: 10px;
+        color: rgba(0, 0, 0, 0.8);
+        border: 1px solid rgba(84, 95, 125, 0.14);
+        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+        border-radius: 4px;
+        margin-bottom: 10px;
         font-weight: 500;
+        font-size: 16px;
       }
 
-      &-details {
-        margin-top: 30px;
-        display: grid;
-        gap: 30px 99px;
-        grid-template-columns: repeat(5, 1fr);
-        color: $tertiary-color;
-
-        span {
-          font-weight: 400;
-          font-size: 12px;
-        }
-
-        p {
-          font-weight: 500;
-          margin-top: 8px;
-        }
+      &:focus {
+        outline: 1px solid rgba(84, 95, 125, 0.7);
       }
     }
 
-    .education-info {
-      padding: 30px 0;
-      border-bottom: 1px solid rgb(33, 63, 125, 0.1);
-      h3 {
-        font-weight: 500;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 51px;
+      color: rgba(0, 0, 0, 0.8);
+      text-decoration: none;
+
+      li {
+        padding-bottom: 10px;
       }
 
-      &-details {
-        margin-top: 30px;
-        display: grid;
-        gap: 30px 99px;
-        grid-template-columns: repeat(4, 1fr);
-        color: $tertiary-color;
-
-        span {
-          font-weight: 400;
-          font-size: 12px;
-        }
-
-        p {
-          font-weight: 500;
-          margin-top: 8px;
-        }
+      @media screen and (max-width: 768px) {
+        display: none;
       }
     }
 
-    .socials-info {
-      padding: 30px 0;
-      border-bottom: 1px solid rgb(33, 63, 125, 0.1);
-      h3 {
-        font-weight: 500;
-      }
+    &-active {
+      padding: 0 25px;
+      color: $secondary-color;
+      border-bottom: 2px solid $secondary-color;
+    }
+  }
+}
 
-      &-details {
-        margin-top: 30px;
-        display: grid;
-        gap: 0 80px;
+.general-details {
+  background-color: #ffffff;
+  margin-top: 30px;
+  margin-bottom: 153px;
+  padding: 30px 96px 46px 30px;
+
+  .personal-info {
+    border-bottom: 1px solid rgb(33, 63, 125, 0.1);
+    padding-bottom: 30px;
+
+    h3 {
+      font-weight: 500;
+    }
+
+    &-details {
+      margin-top: 30px;
+      display: grid;
+      gap: 30px 99px;
+      grid-template-columns: repeat(5, 1fr);
+      color: $tertiary-color;
+
+      @media screen and (max-width: 1440px) {
         grid-template-columns: repeat(3, 1fr);
-        color: $tertiary-color;
+      }
 
-        span {
-          font-weight: 400;
-          font-size: 12px;
-        }
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-        p {
-          font-weight: 500;
-          margin-top: 8px;
-        }
+      @media screen and (max-width: 375px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 12px;
+      }
+
+      p {
+        font-weight: 500;
+        margin-top: 8px;
       }
     }
+  }
 
-    .guarantor-info {
-      padding: 30px 0;
-      h3 {
-        font-weight: 500;
+  .education-info {
+    padding: 30px 0;
+    border-bottom: 1px solid rgb(33, 63, 125, 0.1);
+    h3 {
+      font-weight: 500;
+    }
+
+    &-details {
+      margin-top: 30px;
+      display: grid;
+      gap: 30px 99px;
+      grid-template-columns: repeat(4, 1fr);
+      color: $tertiary-color;
+
+      @media screen and (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 100px;
       }
 
-      &-details {
-        margin-top: 30px;
-        display: grid;
-        gap: 0 100px;
-        grid-template-columns: repeat(4, 1fr);
-        color: $tertiary-color;
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-        span {
-          font-weight: 400;
-          font-size: 12px;
-        }
+      @media screen and (max-width: 375px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
 
-        p {
-          font-weight: 500;
-          margin-top: 8px;
-        }
+      span {
+        font-weight: 400;
+        font-size: 12px;
+      }
+
+      p {
+        font-weight: 500;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .socials-info {
+    padding: 30px 0;
+    border-bottom: 1px solid rgb(33, 63, 125, 0.1);
+    h3 {
+      font-weight: 500;
+    }
+
+    &-details {
+      margin-top: 30px;
+      display: grid;
+      gap: 0 80px;
+      grid-template-columns: repeat(3, 1fr);
+      color: $tertiary-color;
+
+      @media screen and (max-width: 375px) {
+        gap: 30px 80px;
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 12px;
+      }
+
+      p {
+        font-weight: 500;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .guarantor-info {
+    padding: 30px 0;
+    h3 {
+      font-weight: 500;
+    }
+
+    &-details {
+      margin-top: 30px;
+      display: grid;
+      gap: 0 100px;
+      grid-template-columns: repeat(4, 1fr);
+      color: $tertiary-color;
+
+      @media screen and (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 100px;
+      }
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media screen and (max-width: 375px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 12px;
+      }
+
+      p {
+        font-weight: 500;
+        margin-top: 8px;
       }
     }
   }

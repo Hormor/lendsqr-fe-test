@@ -19,6 +19,10 @@ import UsersTableFilter from '../../components/UsersTableFilter'
 
 export default function Users() {
   const [usersData, setUsersData] = useState<Array<User>>([])
+  const [filtered, setFiltered] = useState<Array<User>>([])
+  const [pages, setPages] = useState<Array<number>>([1, 2, 3, 4, 5])
+  const [pageSize, setPageSize] = useState(10)
+  const [currentPage, setCurrentPage] = useState(1)
 
   const navigate = useNavigate()
 
@@ -36,16 +40,28 @@ export default function Users() {
   async function getUsersData() {
     try {
       const res = await instance.get('users')
-      setUsersData((res.data as Array<User>).map((item) => {
+      const mappedData = (res.data as Array<User>).map((item) => {
         return {
           ...item,
           status: getStatusClass(item.id)
         }
-      }))
+      })
+      setUsersData(mappedData)
+      setPages(Array.from(Array(Math.round((mappedData.length / pageSize))), (_, i) => i + 1))
+      setFiltered(mappedData.slice(0, pageSize))
     } catch (error) {
       console.log(error)
-
     }
+  }
+
+  const setPage = (page: number) => {
+    if (page < 1 || page > Math.round((usersData.length / pageSize))) {
+      return
+    }
+    setCurrentPage(page)
+    const start = pageSize * (page - 1)
+    const end = pageSize * (page - 1) + pageSize
+    setFiltered(usersData.slice(start, end))
   }
 
   useEffect(() => {
@@ -85,6 +101,7 @@ export default function Users() {
         <table>
           <thead>
             <tr>
+              <th></th>
               <th><div>
                 <p>ORGANIZATION</p>
                 <UsersTableFilter />
@@ -112,9 +129,10 @@ export default function Users() {
             </tr>
           </thead>
           <tbody>
-            {usersData.map((user) => {
+            {filtered.map((user) => {
               return (
                 <tr key={user.id}>
+                  <td>{user.id}</td>
                   <td>{user.orgName}</td>
                   <td>{user.userName}</td>
                   <td>{user.email}</td>
@@ -137,9 +155,17 @@ export default function Users() {
                 </tr>
               )
             })}
-
           </tbody>
         </table>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <button onClick={() => setPage(currentPage - 1)}>Prev</button>
+          {pages.map((page) => {
+            return (
+              <button key={page} style={{ padding: "8px" }} onClick={() => setPage(page)}>{page}</button>
+            )
+          })}
+          <button onClick={() => setPage(currentPage + 1)}>Next</button>
+        </div>
       </div>
     </div>
   )

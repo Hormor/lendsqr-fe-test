@@ -31,38 +31,53 @@ export default function UserDetails() {
     <div className="user-details">
       <div className="user-details-header">
         <img src={Arrow} alt="Arrow Icon" />
-        <p>Back to Users</p>
+        <a href="/dashboard/users">Back to Users</a>
       </div>
       <div className="user-details-heading">
         <h1>User Details</h1>
-        <div>
-          <button className="blacklist-button">BLACKLIST USER</button>
-          <button className="activate-button">ACTIVATE USER</button>
+        <div className="user-details-button">
+          <button className="blacklist-button">BLACKLIST <span>USER</span></button>
+          <button className="activate-button">ACTIVATE <span>USER</span></button>
         </div>
       </div>
       <div className="user-details-subheadings">
         <div className="user-info">
-          <img src={userData?.profile.avatar} alt="Arrow Icon" className="user-image" />
-          <div className="user-name">
-            <h3>{`${userData?.profile.firstName}  ${userData?.profile.lastName}`
-            }</h3>
-            <span>LSQFf587g90</span>
+          <div>
+            <img src={userData?.profile.avatar} alt="Arrow Icon" className="user-image" />
           </div>
-          <div className="user-tier">
-            <p>User's Tier</p>
-            <span>
-              <img src={Star} alt="Star Icon" />
-              <img src={EmptyStar} alt="Star Icon" />
-              <img src={EmptyStar} alt="Star Icon" />
-            </span>
-          </div>
-          <div className="user-account">
-            <p>{`₦ ${userData?.education.monthlyIncome[1]}`}</p>
-            <span>{userData?.accountNumber}/Providus Bank</span>
+          <div className="user-data">
+            <div className="user-name">
+              <h3>{`${userData?.profile.firstName}  ${userData?.profile.lastName}`
+              }</h3>
+              <span>LSQFf587g90</span>
+            </div>
+            <div className="user-tier">
+              <p>User's Tier</p>
+              <span>
+                <img src={Star} alt="Star Icon" />
+                <img src={EmptyStar} alt="Star Icon" />
+                <img src={EmptyStar} alt="Star Icon" />
+              </span>
+            </div>
+            <div className="user-account">
+              <p>{`₦ ${userData?.education.monthlyIncome[1]}`}</p>
+              <span>{userData?.accountNumber}/Providus Bank</span>
+            </div>
           </div>
         </div>
         <div className="user-tabs">
-          <ul>
+          <div className="user-tabs-mobile">
+            {/* <label htmlFor="user-tab">USER TAB:</label> */}
+            <select name="user-tabs" id="user-tabs">
+              <option value="general-details">General Details</option>
+              <option value="Documents">Documents</option>
+              <option value="bank-details">Bank Details</option>
+              <option value="loans">Loans</option>
+              <option value="savings">Savings</option>
+              <option value="app-system">App and System</option>
+            </select>
+          </div>
+          <ul className="user-tabs-desktop">
             <li className="user-tabs-active">General Details</li>
             <li>Documents</li>
             <li>Bank Details</li>

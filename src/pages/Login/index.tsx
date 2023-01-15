@@ -25,7 +25,7 @@ export default function Login() {
                             <span onClick={() => setShow(!show)}>{show ? "HIDE" : "SHOW"}</span>
                         </div>
                         <span className="forgot-password">FORGOT PASSWORD?</span>
-                        <button type="submit">LOG IN</button>
+                        <button type="submit"><a href="/dashboard">LOG IN</a></button>
                     </form>
                 </div>
             </div>
