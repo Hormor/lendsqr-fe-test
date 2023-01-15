@@ -115,7 +115,8 @@
           text-decoration: underline;
         }
 
-        background-color: #fbfbfb;
+        background-color: #ffffff;
+
         @media screen and (max-width: 600px) {
           display: none;
         }
@@ -143,6 +144,10 @@
 
       .dropdown {
         margin-top: 10px;
+
+        @media screen and (max-width: 600px) {
+          display: none;
+        }
       }
 
       @media screen and (max-width: 1023px) {
