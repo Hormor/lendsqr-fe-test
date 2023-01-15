@@ -45,6 +45,10 @@
     .logo {
       margin-top: 9px;
       width: 144px;
+
+      @media screen and (max-width: 600px) {
+        width: 120px;
+      }
     }
     .hamburger {
       display: none;
@@ -158,6 +162,6 @@
   }
 
   @media screen and (max-width: 600px) {
-    padding: 10px 60px 10px 15px;
+    padding: 10px 15px;
   }
 }

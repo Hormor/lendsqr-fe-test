@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import Logo from "../../assets/logo.svg"
 import LoginImage from "../../assets/loginImage.svg"
 import "./index.scss"
+import { useNavigate } from "react-router-dom";
 
 
 export default function Login() {
 
     const [show, setShow] = useState(false);
+
+    const navigate = useNavigate()
 
     return (
         <div className="login-page">
@@ -25,7 +28,7 @@ export default function Login() {
                             <span onClick={() => setShow(!show)}>{show ? "HIDE" : "SHOW"}</span>
                         </div>
                         <span className="forgot-password">FORGOT PASSWORD?</span>
-                        <button type="submit"><a href="/dashboard">LOG IN</a></button>
+                        <button onClick={() => navigate("/dashboard")} type="submit">LOG IN</button>
                     </form>
                 </div>
             </div>
